@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="calculatorBuilderBean" class="patterns.factory.gui.CalculatorBuilderImpl">
+		<property name="componentFactory">
+			<ref bean="componentFactoryBean" />
+		</property>
+		<property name="appTitle" >
+			<value>CalcTool</value>
+		</property>
+	</bean>
+
+	<bean id="componentFactoryBean"	class="patterns.factory.gui.FactoryFX" />
+	<bean id="appTitle"	class="patterns.factory.gui.FactoryFX" />
+</beans>
